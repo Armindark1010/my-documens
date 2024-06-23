@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input type="file" id="file-input" multiple>
+
+
+
+    <script>
+// function handleFileSelect(event) {
+//   const files = event.target.files;
+//   const filesInfo = {};
+
+//   for (let i = 0; i < files.length; i++) {
+//     const file = files[i];
+//     filesInfo[file.name] = {
+//       name: file.name,
+//     };
+//   }
+
+//   console.log(filesInfo);
+// }
+
+// const fileInput = document.getElementById('file-input');
+// fileInput.addEventListener('change', handleFileSelect);
+
+// function handleFileSelect(event) {
+//   const files = event.target.files;
+//   const filesInfo = {};
+
+//   for (let i = 0; i < files.length; i++) {
+//     const file = files[i];
+//     filesInfo[i] = {
+//       url:file.name
+//       // size: file.size,
+//       // type: file.type,
+//       // lastModified: file.lastModified
+//     };
+//   }
+//   console.log(filesInfo)
+//   const jsonContent = JSON.stringify(filesInfo);
+//   const blob = new Blob([jsonContent], { type: 'application/json' });
+//   const fileName = 'file_info.json';
+
+//   // ذخیره فایل
+//   const link = document.createElement('a');
+//   link.href = URL.createObjectURL(blob);
+//   link.download = fileName;
+//   link.click();
+// }
+
+// const fileInput = document.getElementById('file-input');
+// fileInput.addEventListener('change', handleFileSelect);
+
+
+function handleFileSelect(event) {
+  const files = event.target.files;
+  const filesInfo = [];
+  
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    filesInfo.push({url: file.name,});
+  }
+  
+  console.log(filesInfo);
+  
+  const jsonContent = JSON.stringify({ boxurl: filesInfo });
+  const blob = new Blob([jsonContent], { type: 'application/json' });
+  const fileName = 'file_info.json';
+  
+  // ذخیره فایل
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = fileName;
+  link.click();
+}
+
+const fileInput = document.getElementById('file-input');
+fileInput.addEventListener('change', handleFileSelect);
+
+    </script>
+</body>
+</html>

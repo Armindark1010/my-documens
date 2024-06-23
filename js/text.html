@@ -1,0 +1,38 @@
+
+# جدا کردن کلمه با حرف دل خواه
+## split
+<html>
+    <head>
+        
+        <script>
+        var name = "Armin gholipoor"
+        //   تعداد حروف کلمه 
+        //  length
+        console.log(name.length)
+        // برای اینکه جست و جو در کلمه که ببینیم حرف کجا هست
+        // indexOf
+        console.log(name.indexOf('n'))
+        // برای اینکه بگیم از اون ایندکس جدا کن بهم نمایش بده
+        // slice
+        console.log(name.slice(5))
+// برای اینکه یک حرف یا کلمه رو با حرف دیگه جای گزین کنیم
+// replace()
+        console.log(name.replace("armin","amir"))
+        // برای اینکه بگیم تمام حروف رو بزرگ کنه
+        // toUpperCase
+        console.log(name.toUpperCase())
+        // برای اینکه همه رو با حرف ک.چک بنویسد
+        // toLowerCase
+        console.log(name.toLowerCase())
+        // برای اینکه بگیم اون ایندکس رو بهمون نمایش بده
+        // name[]
+        // charAt
+        console.log(name[3])
+        console.log(name.charAt(2))
+        // برای جدا کردن با مقدار دلخواه
+        // split
+        console.log(name.split(" "))
+        console.log(name.split(""))
+        </script>
+    </head>
+</html>

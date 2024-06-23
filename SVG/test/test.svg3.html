@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: blue;
+        }
+
+        #Vector-4{
+            stroke-width: 10px;
+            stroke: brown;
+            fill: none;
+            animation:animate-vector 5s ease ;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 0;
+            transition: all 2s ease;
+        }
+        @keyframes animate-vector{
+           from{
+            stroke-dashoffset: 1000;
+           }
+        }
+        #circle{
+            stroke: chartreuse;
+            stroke-dasharray: 1560;
+            stroke-dashoffset: 0;
+            animation: cercle 3s ease;
+        }
+        @keyframes cercle{
+            0%{
+                stroke-dashoffset: 0;
+            }
+            40%{
+                stroke-dashoffset: 1560;
+            }
+            80%{
+                stroke-dashoffset: 3120;
+                fill: transparent;
+            }
+            100%{
+                stroke-dashoffset: 3120;
+                fill: chartreuse;
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg width="568" height="258" viewBox="0 0 600 258" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="Vector-4" d="M0 90.5832C28.934 66.4404 78.6557 31.1588 137.925 15.1579C205.5 -3.08543 322.663 -16.1217 371.172 58.1153C395.132 94.784 369.128 136.415 398 168.415C426.691 200.213 474.941 179.777 511.5 196.915C543.5 211.915 552 238.415 567 256.915" stroke="#E4E4E4"/>
+        </svg>
+        
+        <svg width="176" height="176" viewBox="0 0 176 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle id="circle" cx="88" cy="88" r="88" />
+            </svg>
+            
+</body>
+</html>

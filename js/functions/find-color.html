@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vibrant.js/1.0.0/Vibrant.min.js" integrity="sha512-V6rhYmJy8NZQF8F0bhJiTM0iI6wX/FKJoWvYrCM15UIeb6p38HjvTZWfO0IxJnMZrHWUJZJqLuWK0zslra2FVw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function extractColorsFromImage(imageSrc) {
+  const image = new Image();
+  image.crossOrigin = "Anonymous"; // تا از عکس‌های دیگر دامنه‌ها هم استفاده کنید
+
+  return new Promise((resolve, reject) => {
+    image.onload = function () {
+      const vibrant = new Vibrant(image);
+      const swatches = vibrant.swatches(); // استخراج پالت رنگی
+
+      const colors = {
+        Vibrant: swatches.Vibrant.getHex(),
+        Muted: swatches.Muted.getHex(),
+        DarkVibrant: swatches.DarkVibrant.getHex()
+      };
+
+      resolve(colors);
+    };
+
+    image.onerror = function () {
+      reject("خطا در بارگذاری تصویر");
+    };
+
+    image.src = imageSrc;
+  });
+}
+
+// استفاده از تابع
+const imageURL = 'https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg'
+extractColorsFromImage(imageURL)
+  .then((colors) => {
+    console.log(colors); // چاپ رنگ‌های استخراج شده
+  })
+  .catch((error) => {
+    console.error(error); // چاپ خطاها
+  });
+
+    </script>
+</body>
+</html>

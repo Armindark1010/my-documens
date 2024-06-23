@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style-type:none;
+            position: relative;
+            border: red 2px solid;
+            padding: 5px;
+            margin: 5px;
+        }
+        li:nth-child(2){
+            width: 80%;
+        }
+        li:nth-child(3){
+            width: 10%;
+        }
+        ul{
+            display: flex;
+        }
+        #sin{
+            display: none;
+        }
+        #lser{
+        }
+        #dis{
+            position: relative;
+            width: 100%;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>1</li>
+            <li></li>
+            <li>
+                <div id="dis">
+                <div style="width: 80%;height: 100%;"></div>
+                <label id="lser" for="">+</label>
+                <input id="sin" type="text">
+                </div>
+            </li>
+            <li>2</li>
+        </ul>
+    </nav>
+    <form action="/action_page.php" method="get">
+        <label for="browser">Choose your browser from the list:</label>
+        <input list="browsers" name="browser" id="browser">
+        <datalist id="browsers">
+          <option value="Edge">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+        <input type="submit">
+      </form>
+</body>
+</html>

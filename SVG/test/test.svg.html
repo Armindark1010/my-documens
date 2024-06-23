@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #LIGHT1,#DARK1,#DARK2{
+            transition: all 1s ease;
+        }
+        #DARK2{
+            opacity: 0;
+            transform:translateX(-100%);
+        }
+        svg:hover #DARK1{
+            opacity: 0;
+            transform:translateX(50%);
+        }
+        svg:hover #DARK2{
+            opacity: 1;
+            transform:translateX(0%);
+        }
+        svg:hover #LIGHT1{
+            transform:translateX(20%);
+        }
+    </style>
+</head>
+<body>
+    <svg width="225" height="170" viewBox="0 0 225 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="TRANGEL">
+        <g id="LIGHT">
+        <path id="LIGHT1" d="M155 76.3397C161.667 80.1887 161.667 89.8112 155 93.6602L57.5 149.952C50.8334 153.801 42.5 148.99 42.5 141.292L42.5 28.7084C42.5 21.0104 50.8333 16.1991 57.5 20.0481L155 76.3397Z" fill="#00F0FF" fill-opacity="0.54"/>
+        </g>
+        <g id="DARK">
+        <path id="DARK2" d="M155 76.3397C161.667 80.1887 161.667 89.8112 155 93.6602L57.5 149.952C50.8334 153.801 42.5 148.99 42.5 141.292L42.5 28.7084C42.5 21.0104 50.8333 16.1991 57.5 20.0481L155 76.3397Z" fill="#0038FF" fill-opacity="0.54"/>
+        <path id="DARK1" d="M210 76.3397C216.667 80.1887 216.667 89.8112 210 93.6602L112.5 149.952C105.833 153.801 97.5 148.99 97.5 141.292L97.5 28.7084C97.5 21.0104 105.833 16.1991 112.5 20.0481L210 76.3397Z" fill="#0038FF" fill-opacity="0.54"/>
+        </g>
+        </g>
+        </svg>
+        
+        
+        
+        
+</body>
+</html>

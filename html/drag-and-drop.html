@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .drag-item {
+      padding: 10px;
+      margin: 5px;
+      background-color: #f0f0f0;
+      cursor: grab;
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<ul id="draggableList">
+  <li class="drag-item" draggable="true">Item 1</li>
+  <li class="drag-item" draggable="true">Item 2</li>
+  <li class="drag-item" draggable="true">Item 3</li>
+  <li class="drag-item" draggable="true">Item 4</li>
+</ul>
+
+<script>
+  const draggableList = document.getElementById('draggableList');
+
+  let draggedItem = null;
+
+  draggableList.addEventListener('dragstart', function(event) {
+    draggedItem = event.target;
+    event.dataTransfer.effectAllowed = 'move';
+  });
+
+  draggableList.addEventListener('dragover', function(event) {
+    event.preventDefault();
+  });
+
+  draggableList.addEventListener('drop', function(event) {
+    if (event.target.classList.contains('drag-item')) {
+      event.target.parentNode.insertBefore(draggedItem, event.target.nextSibling);
+      applyAnimation();
+    }
+  });
+
+  function applyAnimation() {
+    // اعمال انیمیشن به عنوان مثال: چرخش
+    const rotationAngle = Math.floor(Math.random() * 360);
+    draggedItem.style.transform = `rotate(${rotationAngle}deg)`;
+    setTimeout(() => {
+      draggedItem.style.transform = 'rotate(0)';
+    }, 300);
+  }
+</script>
+
+</body>
+</html>

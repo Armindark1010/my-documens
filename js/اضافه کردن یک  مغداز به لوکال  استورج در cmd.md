@@ -1,0 +1,3 @@
+```
+localsrorage.setItem("name",a)
+```

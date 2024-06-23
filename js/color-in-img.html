@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    // وارد کردن کتابخانه‌ی color-thief
+const ColorThief = require('color-thief');
+
+// ایجاد یک شیء از کتابخانه‌ی ColorThief
+const colorThief = new ColorThief();
+
+// انتخاب تصویر مورد نظر با استفاده از DOM
+const image = document.getElementById('Rectangle-26.png');
+
+// استخراج رنگ اصلی از تصویر
+const dominantColor = colorThief.getColor(image);
+
+// استخراج رنگ‌های مختلف و تعداد استفاده‌شده‌ی هرکدام
+const palette = colorThief.getPalette(image, "Rectangle-26.png"); // تعداد رنگ‌های مختلف که می‌خواهید دریافت کنید
+
+// نمایش رنگ اصلی
+console.log('Dominant Color (RGB):', dominantColor);
+
+// نمایش رنگ‌های مختلف و تعداد استفاده‌شده‌ی هرکدام
+palette.forEach(color => {
+  console.log('Color (RGB):', color);
+});
+
+// نمایش اطلاعات در DOM یا کاربردهای دیگر
+// مثال: نمایش رنگ‌ها در یک المان با id="colors-container"
+const colorsContainer = document.getElementById('colors-container');
+
+palette.forEach(color => {
+  const colorBox = document.createElement('div');
+  colorBox.style.width = '50px';
+  colorBox.style.height = '50px';
+  colorBox.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+  colorsContainer.appendChild(colorBox);
+});
+  </script>
+</body>
+</html>
+
+
+
